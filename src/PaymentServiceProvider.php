@@ -18,7 +18,7 @@ class PaymentServiceProvider extends ServiceProvider
             __DIR__.'/../config/payment.php' => config_path('payment.php'),
         ], 'config');
 
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 
     public function register()

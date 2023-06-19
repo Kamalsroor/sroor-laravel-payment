@@ -15,5 +15,12 @@
             "email": "kamal.s.sroor@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Sroor\\Payment\\PaymentServiceProvider"
+          ]
+        }
+      }
 }
