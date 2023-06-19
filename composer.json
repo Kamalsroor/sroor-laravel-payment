@@ -1,5 +1,5 @@
 {
-    "name": "sroor/payment",
+    "name": "sroor/laravel_payment",
     "description": "laravel payemnts getawaies",
     "type": "library",
     "license": "MIT",
