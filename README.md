@@ -7,7 +7,7 @@ This is a laravel package to facilate integartion with paymob apis [Paymob docs]
 1- You can install the package via composer:
 
 ```php
-composer require sroor/laravel_payment
+composer require sroor/laravel-payment
 ```
 
 2- Publish config file for editing if needed:
