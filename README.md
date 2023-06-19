@@ -20,10 +20,10 @@ php artisan vendor:publish --tag=config --provider="Sroor\Payment\PaymentService
 - Register new merchant account or login if you already have one ([Register](https://accept.paymob.com/portal2/en/register?flash=true)).
 - Get Paymob credentials from Paymob Dashboard ([How](https://docs.paymob.com/docs/profile)) and update `.env` file.
 ```
-PAYMOB_API_KEY             =
-PAYMOB_CARD_INTEGRATION_ID =
-PAYMOB_CARD_IFRAME_ID      =
-PAYMOB_HMAC_SECRET         =
+PAYMENT_PAYMOB_API_KEY             =
+PAYMENT_PAYMOB_CARD_INTEGRATION_ID =
+PAYMENT_PAYMOB_CARD_IFRAME_ID      =
+PAYMENT_PAYMOB_HMAC_SECRET         =
 ```
 
 - Make payment and get iframe url from paymob
@@ -45,9 +45,9 @@ Route::get('/test', function () {
         "expiration" => 3600, // required
         // optional fields in billing data, if it isn't available, please send it to be "NA",
         "billing_data" => [
-            "first_name" => "Mohamed", // required
-            "last_name" => "Sakr", // required
-            "email" => "mohamed@mail.com", // required
+            "first_name" => "Kamal", // required
+            "last_name" => "Sroor", // required
+            "email" => "Kamal@mail.com", // required
             "phone_number" => "01234567890", // required 
             "apartment" => "NA", // optional
             "floor" => "NA", // optional
