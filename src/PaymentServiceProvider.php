@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace Sroor\Payment;
 
 use Illuminate\Support\ServiceProvider;
-use Sroor\Payment\Payment;
+use Sroor\Payment\Paymob;
 
 
 
@@ -25,9 +25,9 @@ class PaymentServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/payment.php', 'payment');
 
-        // PayMob Facede.
-        $this->app->bind('payment', function () {
-            return new Payment();
-        });
+        // // PayMob Facede.
+        // $this->app->bind('paymob', function () {
+        //     return new Paymob();
+        // });
     }
 }

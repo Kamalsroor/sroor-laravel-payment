@@ -13,7 +13,7 @@ composer require sroor/laravel-payment
 2- Publish config file for editing if needed:
 
 ```php
-php artisan vendor:publish --tag=config --provider="Sroor\Payment\PaymobServiceProvider"
+php artisan vendor:publish --tag=config --provider="Sroor\Payment\PaymentServiceProvider"
 ```
 
 ## Usage
