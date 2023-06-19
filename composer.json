@@ -1,0 +1,18 @@
+{
+    "name": "sroor/payment",
+    "description": "laravel payemnts getawaies",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sroor\\Payment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kamal Sroor",
+            "email": "kamal.s.sroor@gmail.com"
+        }
+    ],
+    "require": {}
+}
