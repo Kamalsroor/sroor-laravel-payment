@@ -23,17 +23,21 @@ class PaymobVerifyWebhookHmac
      */
     public function handle(Request $request, Closure $next)
     {
-        $type = $request->get('type');
+        // $type = $request->get('type');
         // \Log::info("Type: $type");
-        if($type == "TRANSACTION") {
+        // if($type == "TRANSACTION") {
             $hmacSecret = config('payment.paymob.hmac_secret');
-            $obj = $request->get('obj');
+            $obj = $request->all();
             $hmac = $request->get('hmac');
+
+
+
             $calculatedHmac = $this->calculateHmac($obj, $hmacSecret);
+
             if($hmac !== $calculatedHmac) {
                 abort(403, 'Access denied');
             }
-        }
+        // }
 
         return $next($request);
     }
@@ -52,6 +56,8 @@ class PaymobVerifyWebhookHmac
      */
     public function calculateHmac(array $obj, string $hmacSecret): string
     {
+
+
         $data =
             json_encode($obj['amount_cents']) .
             json_encode($obj['created_at']) .
@@ -66,14 +72,16 @@ class PaymobVerifyWebhookHmac
             json_encode($obj['is_refunded']) .
             json_encode($obj['is_standalone_payment']) .
             json_encode($obj['is_voided']) .
-            json_encode($obj['order']['id']) .
+            json_encode($obj['order']) .
             json_encode($obj['owner']) .
             json_encode($obj['pending']) .
-            json_encode($obj['source_data']['pan']) .
-            json_encode($obj['source_data']['sub_type']) .
-            json_encode($obj['source_data']['type']) .
+            json_encode($obj['source_data_pan']) .
+            json_encode($obj['source_data_sub_type']) .
+            json_encode($obj['source_data_type']) .
             json_encode($obj['success']);
+
         $data = str_replace('"', '', $data);
+
         $hmac = hash_hmac('SHA512', $data, $hmacSecret);
         return $hmac;
     }
