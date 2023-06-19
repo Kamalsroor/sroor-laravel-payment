@@ -3,6 +3,7 @@
     "description": "laravel payemnts getawaies",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Sroor\\Payment\\": "src/"
